@@ -2,7 +2,7 @@
 # stored in pillar, as opposed to cleartext passwords.  Resets the maintenance account
 # password with each subsequent run
 
-{% set maintenance_password = salt['cmd.run']('/usr/bin/openssl rand -hex 32')|default('openssl_not_found_pw') %}
+{% set maintenance_password = salt['cmd.run']('bash -c "HOME=/tmp /usr/bin/openssl rand -hex 32"')|default('openssl_not_found_pw') %}
 
 # Install a slightly modified version of the rabbitmqadmin script that uses
 # password_hash, not password
