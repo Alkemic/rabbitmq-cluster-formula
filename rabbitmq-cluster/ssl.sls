@@ -59,6 +59,7 @@
     - group: root
     - mode: 644
     - contents: ""
+    - contents_newline: False
     - require:
       - file: /etc/rabbitmq/ssl/ca
 
